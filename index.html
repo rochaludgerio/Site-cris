@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Cristina de Moraes | Enfermeira Especialista</title>
+  <meta name="description" content="Site profissional de Maria Cristina de Moraes, Enfermeira Especialista. Teleconsulta, consultoria em saúde, tratamento de feridas, cuidados paliativos, saúde da família, saúde do idoso e muito mais." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :root {
+      --verde: #1f7a5c;
+      --verde-escuro: #14533f;
+      --verde-claro: #e9f7f1;
+      --cinza: #555;
+      --cinza-claro: #f5f5f5;
+      --branco: #ffffff;
+      --sombra: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    body {
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--branco);
+      box-shadow: var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo h1 {
+      color: var(--verde);
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+
+    .logo p {
+      color: var(--cinza);
+      font-size: 0.95rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(31,122,92,0.82), rgba(20,83,63,0.88)),
+                  url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: white;
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--verde-escuro);
+      padding: 14px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--verde-claro);
+      transform: translateY(-2px);
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 70px 0;
+    }
+
+    .titulo-secao {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .titulo-secao h2 {
+      font-size: 2rem;
+      color: var(--verde);
+      margin-bottom: 10px;
+    }
+
+    .titulo-secao p {
+      color: var(--cinza);
+      max-width: 780px;
+      margin: auto;
+    }
+
+    /* SOBRE */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .sobre-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: var(--sombra);
+    }
+
+    .sobre-card h3 {
+      color: var(--verde);
+      margin-bottom: 14px;
+      font-size: 1.4rem;
+    }
+
+    .sobre-card p {
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .destaque {
+      background: var(--verde-claro);
+      border-left: 5px solid var(--verde);
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-weight: bold;
+      color: var(--verde-escuro);
+    }
+
+    .foto-profissional {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+    }
+
+    .foto-profissional img {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      min-height: 420px;
+    }
+
+    /* CARDS SERVIÇOS */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: var(--sombra);
+      transition: 0.3s;
+      border-top: 5px solid var(--verde);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--verde);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      color: #444;
+    }
+
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    /* LISTA ESPECIALIZAÇÕES */
+    .especializacoes-box {
+      background: white;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: var(--sombra);
+    }
+
+    .especializacoes-box h3 {
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+
+    .lista-especializacoes {
+      columns: 2;
+      gap: 30px;
+    }
+
+    .lista-especializacoes li {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--verde), var(--verde-escuro));
+      color: white;
+      text-align: center;
+      border-radius: 18px;
+      padding: 50px 30px;
+      box-shadow: var(--sombra);
+    }
+
+    .cta h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+    }
+
+    .cta .btn {
+      background: white;
+      color: var(--verde-escuro);
+    }
+
+    /* CONTATO */
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contato-box, .form-box {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: var(--sombra);
+    }
+
+    .contato-box h3,
+    .form-box h3 {
+      color: var(--verde);
+      margin-bottom: 16px;
+    }
+
+    .contato-item {
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-enviar {
+      background: var(--verde);
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-enviar:hover {
+      background: var(--verde-escuro);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f3327;
+      color: #dfeee8;
+      padding: 35px 0;
+      margin-top: 40px;
+    }
+
+    .footer-content {
+      text-align: center;
+    }
+
+    .footer-content h3 {
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .footer-content p {
+      margin-bottom: 8px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .sobre-grid,
+      .contato-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .lista-especializacoes {
+        columns: 1;
+      }
+
+      .topo {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero h2 {
+        font-size: 1.7rem;
+      }
+
+      .titulo-secao h2 {
+        font-size: 1.6rem;
+      }
+
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container topo">
+      <div class="logo">
+        <h1>Maria Cristina de Moraes</h1>
+        <p>Enfermeira Especialista • COREN-SP 321742</p>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#especializacoes">Especializações</a></li>
+          <li><a href="#teleconsulta">Teleconsulta</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h2>Cuidado especializado, humanizado e baseado em evidências</h2>
+      <p>
+        Atendimento de enfermagem com foco em promoção da saúde, prevenção, acompanhamento clínico,
+        tratamento de feridas, dor crônica, saúde da família, saúde do idoso, cuidados paliativos,
+        consultoria e educação em saúde.
+      </p>
+      <a href="#contato" class="btn">Agendar atendimento</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Sobre Maria Cristina de Moraes</h2>
+        <p>
+          Enfermeira especialista com ampla formação e atuação em diferentes áreas da assistência,
+          gestão, educação em saúde e consultoria.
+        </p>
+      </div>
+
+      <div class="sobre-grid">
+        <div class="sobre-card">
+          <h3>Atendimento com acolhimento, técnica e responsabilidade</h3>
+          <p>
+            Maria Cristina de Moraes é Enfermeira Especialista, registrada no COREN-SP sob o número
+            <strong>321742</strong>, com trajetória voltada à assistência integral, cuidado humanizado,
+            prevenção de agravos, acompanhamento de condições crônicas e consultoria em saúde.
+          </p>
+          <p>
+            Sua atuação contempla o cuidado ao paciente e à família, o planejamento assistencial,
+            a educação em saúde, o acompanhamento clínico e o suporte técnico em áreas especializadas,
+            sempre com foco na segurança, qualidade e individualização do cuidado.
+          </p>
+
+          <div class="destaque">
+            COREN-SP 321742 • Atendimento com ética, empatia e compromisso com a qualidade de vida.
+          </div>
+        </div>
+
+        <div class="foto-profissional">
+          <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a41?auto=format&fit=crop&w=900&q=80" alt="Profissional de enfermagem">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" style="background:#f3f8f6;">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Serviços e Áreas de Atuação</h2>
+        <p>
+          Atuação clínica, educativa, consultiva e gerencial, com foco no cuidado integral do paciente,
+          da família, do cuidador e das instituições de saúde.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Teleconsulta de Enfermagem</h3>
+          <p>Atendimento remoto com orientação, avaliação inicial e acompanhamento em saúde.</p>
+          <ul>
+            <li>Consulta de enfermagem</li>
+            <li>Educação em saúde</li>
+            <li>Acompanhamento de condições crônicas</li>
+            <li>Planejamento de cuidados</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Fibromialgia e Dor Crônica</h3>
+          <p>Acompanhamento voltado ao controle de sintomas, autocuidado e qualidade de vida.</p>
+          <ul>
+            <li>Avaliação de rotina e sintomas</li>
+            <li>Orientação sobre fadiga e sono</li>
+            <li>Educação para autocuidado</li>
+            <li>Monitoramento contínuo</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Centro de Feridas e Cicatrização</h3>
+          <p>Avaliação e acompanhamento de feridas agudas e crônicas.</p>
+          <ul>
+            <li>Pé diabético</li>
+            <li>Lesão por pressão</li>
+            <li>Úlceras venosas e arteriais</li>
+            <li>Feridas cirúrgicas e traumáticas</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Gerontologia e Saúde do Idoso</h3>
+          <p>Cuidado integral para promoção do envelhecimento saudável e apoio ao cuidador.</p>
+          <ul>
+            <li>Avaliação do idoso</li>
+            <li>Prevenção de quedas</li>
+            <li>Organização medicamentosa</li>
+            <li>Orientação familiar</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Cuidados Paliativos</h3>
+          <p>Assistência humanizada para conforto, qualidade de vida e apoio familiar.</p>
+          <ul>
+            <li>Controle de sintomas</li>
+            <li>Planejamento assistencial</li>
+            <li>Apoio ao cuidador</li>
+            <li>Educação em cuidados</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Saúde da Família</h3>
+          <p>Atenção à promoção da saúde, prevenção de doenças e acompanhamento familiar.</p>
+          <ul>
+            <li>Educação em saúde</li>
+            <li>Promoção da saúde</li>
+            <li>Planejamento familiar</li>
+            <li>Acompanhamento de rotina</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Saúde Materno-Infantil</h3>
+          <p>Apoio à gestante, puérpera, recém-nascido e família.</p>
+          <ul>
+            <li>Orientação à gestante</li>
+            <li>Aleitamento materno</li>
+            <li>Cuidados neonatais</li>
+            <li>Educação familiar</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Consultoria em Gestão e Saúde</h3>
+          <p>Suporte técnico para serviços, equipes e processos assistenciais.</p>
+          <ul>
+            <li>Gestão hospitalar</li>
+            <li>Indicadores assistenciais</li>
+            <li>Segurança do paciente</li>
+            <li>Capacitação de equipes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIALIZAÇÕES -->
+  <section id="especializacoes">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Especializações</h2>
+        <p>
+          Formação ampla e multidisciplinar, com foco em assistência, gestão, urgência, saúde pública,
+          cuidados paliativos, dermatologia, infectologia, saúde da família e muito mais.
+        </p>
+      </div>
+
+      <div class="especializacoes-box">
+        <h3>Especializações registradas</h3>
+        <ul class="lista-especializacoes">
+          <li>Prática da Enfermagem Cirúrgica</li>
+          <li>Coaching Pessoal e de Equipe</li>
+          <li>Cuidados Paliativos</li>
+          <li>Direito Aplicado aos Serviços de Saúde</li>
+          <li>Enfermagem e as Patologias</li>
+          <li>Enfermagem e Doenças Transmissíveis</li>
+          <li>Enfermagem em Dermatologia e Tratamento de Feridas</li>
+          <li>Enfermagem em Urgência e Emergência</li>
+          <li>Enfermagem Forense</li>
+          <li>Estratégia Saúde da Família</li>
+          <li>Gerontologia e Cuidado ao Idoso</li>
+          <li>Gestão de Pessoas</li>
+          <li>Infectologia</li>
+          <li>Investigação Forense e Perícia Criminal</li>
+          <li>MBA em Gestão Hospitalar</li>
+          <li>Práticas Integrativas e Complementares em Saúde</li>
+          <li>Psicologia em Cuidados Paliativos</li>
+          <li>Saúde e Segurança do Trabalho</li>
+          <li>Saúde Materno-Infantil</li>
+          <li>Saúde Pública</li>
+          <li>UTI Geral e Gestão da Assistência Intensiva ao Paciente Crítico</li>
+          <li>Vigilância Sanitária</li>
+        </ul>
+
+        <br><br>
+
+        <h3>Especializações em andamento</h3>
+        <ul>
+          <li>Gerenciamento em Enfermagem</li>
+          <li>Gestão em Saúde Hospitalar, Clínica e Postos de Saúde</li>
+          <li>Gestão em Saúde Pública</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELECONSULTA -->
+  <section id="teleconsulta" style="background:#f3f8f6;">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Teleconsulta de Enfermagem</h2>
+        <p>
+          Atendimento online com escuta qualificada, orientação individualizada e suporte em saúde
+          para pacientes, familiares e cuidadores.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Consulta e orientação</h3>
+          <p>Atendimento para dúvidas, sintomas, rotina de cuidados e acompanhamento em saúde.</p>
+        </div>
+
+        <div class="card">
+          <h3>Acompanhamento de doenças crônicas</h3>
+          <p>Monitoramento de condições de saúde e apoio no autocuidado contínuo.</p>
+        </div>
+
+        <div class="card">
+          <h3>Planejamento de cuidados</h3>
+          <p>Organização da assistência de acordo com a necessidade do paciente e da família.</p>
+        </div>
+
+        <div class="card">
+          <h3>Educação em saúde</h3>
+          <p>Orientações práticas, seguras e baseadas em evidências para o dia a dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS ESPECIAIS -->
+  <section>
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Atuação em Áreas Especiais</h2>
+        <p>
+          Cuidado especializado para diferentes perfis de pacientes e necessidades clínicas.
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Urgência e Emergência</h3>
+          <p>Consultoria, capacitação, planejamento e apoio técnico em fluxos assistenciais.</p>
+        </div>
+
+        <div class="card">
+          <h3>UTI e Paciente Crítico</h3>
+          <p>Consultoria técnica, protocolos de segurança, educação continuada e gestão da assistência intensiva.</p>
+        </div>
+
+        <div class="card">
+          <h3>Infectologia</h3>
+          <p>Orientação preventiva, controle de infecções e educação sobre doenças transmissíveis.</p>
+        </div>
+
+        <div class="card">
+          <h3>Vigilância Sanitária</h3>
+          <p>Consultoria, adequação sanitária, auditorias internas e capacitação de equipes.</p>
+        </div>
+
+        <div class="card">
+          <h3>Saúde e Segurança do Trabalho</h3>
+          <p>Promoção da saúde ocupacional, prevenção de agravos e ações educativas em saúde.</p>
+        </div>
+
+        <div class="card">
+          <h3>Consultoria Pericial e Técnica</h3>
+          <p>Pareceres técnicos, enfermagem forense e apoio especializado em saúde e serviços.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>Cuidado profissional com acolhimento e excelência</h2>
+        <p>
+          Atendimento individualizado para pacientes, familiares, cuidadores e instituições,
+          com foco em qualidade de vida, segurança, educação em saúde e cuidado integral.
+        </p>
+        <a href="#contato" class="btn">Entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Contato</h2>
+        <p>
+          Agende um atendimento, solicite informações ou entre em contato para consultoria em saúde.
+        </p>
+      </div>
+
+      <div class="contato-grid">
+        <div class="contato-box">
+          <h3>Informações de contato</h3>
+
+          <div class="contato-item">
+            <strong>Maria Cristina de Moraes</strong><br>
+            Enfermeira Especialista
+          </div>
+
+          <div class="contato-item">
+            <strong>COREN-SP:</strong> 321742
+          </div>
+
+          <div class="contato-item">
+            <strong>WhatsApp:</strong> (11) 94743-8825
+          </div>
+
+          <div class="contato-item">
+            <strong>E-mail:</strong> contato@enfermeiramariacristina.com.br
+          </div>
+
+          <div class="contato-item">
+            <strong>Atendimento:</strong> Online para todo o Brasil
+          </div>
+
+          <div class="contato-item">
+            <strong>Áreas de atuação:</strong> Teleconsulta, feridas, fibromialgia, cuidados paliativos,
+            saúde do idoso, saúde da família, consultoria e educação em saúde.
+          </div>
+        </div>
+
+        <div class="form-box">
+          <h3>Envie uma mensagem</h3>
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone">
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Descreva sua necessidade"></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <h3>Maria Cristina de Moraes</h3>
+      <p>Enfermeira Especialista • COREN-SP 321742</p>
+      <p>Excelência, conhecimento e cuidado humanizado para transformar vidas através da enfermagem especializada.</p>
+      <p>© 2026 - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>
