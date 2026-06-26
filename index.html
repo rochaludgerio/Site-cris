@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maria Cristina de Moraes | Enfermeira Especialista</title>
-  <meta name="description" content="Site profissional de Maria Cristina de Moraes, Enfermeira Especialista. Teleconsulta, consultoria em saúde, tratamento de feridas, cuidados paliativos, saúde da família, saúde do idoso, ambulância, injetáveis, laudos e terapias complementares." />
+  <meta name="description" content="Site profissional de Maria Cristina de Moraes, Enfermeira Especialista. Teleconsulta, consultoria em saúde, tratamento de feridas, cuidados paliativos, ambulância, injetáveis, laudos, terapias complementares, saúde da família, saúde do idoso e muito mais." />
 
   <style>
     * {
@@ -17,19 +17,20 @@
 
     :root {
       --roxo: #6f42c1;
-      --roxo-escuro: #4b2d83;
-      --roxo-claro: #f2ebff;
-      --roxo-medio: #8a63d2;
-      --cinza: #555;
-      --cinza-claro: #f7f5fb;
-      --branco: #ffffff;
+      --roxo-escuro: #4d2c91;
+      --roxo-medio: #8d63d2;
+      --roxo-claro: #f2ecfb;
+      --roxo-claro-2: #faf7ff;
       --texto: #222;
-      --sombra: 0 6px 22px rgba(0, 0, 0, 0.08);
-      --borda: #e8def8;
+      --cinza: #666;
+      --cinza-claro: #f6f6f8;
+      --branco: #ffffff;
+      --sombra: 0 8px 24px rgba(0,0,0,0.08);
+      --borda: rgba(111, 66, 193, 0.15);
     }
 
     body {
-      background: #faf9fd;
+      background: #fcfcfe;
       color: var(--texto);
       line-height: 1.6;
     }
@@ -44,25 +45,25 @@
     header {
       background: rgba(255,255,255,0.96);
       backdrop-filter: blur(8px);
-      box-shadow: var(--sombra);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #eee;
     }
 
     .topo {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0;
-      gap: 20px;
+      gap: 24px;
+      padding: 18px 0;
     }
 
     .logo h1 {
       color: var(--roxo);
-      font-size: 1.55rem;
+      font-size: 1.65rem;
       margin-bottom: 4px;
-      line-height: 1.2;
     }
 
     .logo p {
@@ -74,47 +75,78 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 16px;
     }
 
     nav a {
       text-decoration: none;
-      color: #2a2a2a;
+      color: var(--texto);
       font-weight: bold;
-      transition: 0.3s;
       font-size: 0.95rem;
-      padding: 8px 10px;
-      border-radius: 8px;
+      transition: 0.3s;
+      padding: 6px 2px;
+      position: relative;
     }
 
     nav a:hover {
       color: var(--roxo);
-      background: var(--roxo-claro);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: var(--roxo);
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* HERO */
     .hero {
       background:
-        linear-gradient(rgba(75,45,131,0.82), rgba(111,66,193,0.78)),
-        url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+        linear-gradient(rgba(77,44,145,0.82), rgba(111,66,193,0.78)),
+        url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       padding: 95px 0;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 820px;
+    }
+
+    .hero .mini-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+      backdrop-filter: blur(4px);
     }
 
     .hero h2 {
-      font-size: 2.7rem;
-      margin-bottom: 18px;
+      font-size: 2.8rem;
       line-height: 1.2;
+      margin-bottom: 18px;
     }
 
     .hero p {
-      font-size: 1.08rem;
-      margin-bottom: 28px;
+      font-size: 1.1rem;
       max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .hero-botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
@@ -131,21 +163,24 @@
 
     .btn:hover {
       transform: translateY(-2px);
-      background: #f7f0ff;
+      background: #f5efff;
     }
 
-    .btn-roxo {
-      background: var(--roxo);
+    .btn-outline {
+      background: transparent;
       color: white;
+      border: 2px solid rgba(255,255,255,0.7);
+      box-shadow: none;
     }
 
-    .btn-roxo:hover {
-      background: var(--roxo-escuro);
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      color: white;
     }
 
     /* SEÇÕES */
     section {
-      padding: 72px 0;
+      padding: 75px 0;
     }
 
     .titulo-secao {
@@ -154,42 +189,47 @@
     }
 
     .titulo-secao h2 {
-      font-size: 2rem;
       color: var(--roxo);
+      font-size: 2rem;
       margin-bottom: 10px;
     }
 
     .titulo-secao p {
       color: var(--cinza);
-      max-width: 820px;
+      max-width: 850px;
       margin: auto;
     }
 
     /* SOBRE */
     .sobre-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 35px;
-      align-items: center;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .sobre-card,
+    .foto-profissional {
+      background: white;
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+      border: 1px solid #f0ecf9;
     }
 
     .sobre-card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: var(--sombra);
-      border: 1px solid var(--borda);
+      padding: 32px;
     }
 
     .sobre-card h3 {
       color: var(--roxo);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       font-size: 1.45rem;
     }
 
     .sobre-card p {
-      margin-bottom: 14px;
       color: #333;
+      margin-bottom: 14px;
     }
 
     .destaque {
@@ -197,57 +237,79 @@
       border-left: 5px solid var(--roxo);
       padding: 16px;
       border-radius: 10px;
-      margin-top: 18px;
-      font-weight: bold;
+      margin-top: 14px;
       color: var(--roxo-escuro);
+      font-weight: bold;
     }
 
-    .foto-profissional {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--sombra);
-      border: 1px solid var(--borda);
-      min-height: 420px;
+    .sobre-lista {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .sobre-item {
+      background: #faf7ff;
+      border: 1px solid #efe7fb;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 0.96rem;
+    }
+
+    .sobre-item strong {
+      display: block;
+      color: var(--roxo);
+      margin-bottom: 4px;
     }
 
     .foto-profissional img {
       width: 100%;
       height: 100%;
-      min-height: 420px;
+      min-height: 480px;
       object-fit: cover;
       display: block;
     }
 
-    /* NÚMEROS */
+    /* FAIXA DE DESTAQUES */
     .faixa-destaques {
-      margin-top: 28px;
+      background: linear-gradient(135deg, var(--roxo-claro), #fff);
+      border-top: 1px solid #eee7fb;
+      border-bottom: 1px solid #eee7fb;
+      padding: 26px 0;
+    }
+
+    .faixa-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .mini-box {
+    .faixa-item {
       background: white;
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 18px;
-      text-align: center;
       box-shadow: var(--sombra);
-      border: 1px solid var(--borda);
+      border: 1px solid #f0ecf9;
+      text-align: center;
     }
 
-    .mini-box h3 {
+    .faixa-item h3 {
       color: var(--roxo);
-      font-size: 1.6rem;
-      margin-bottom: 5px;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
     }
 
-    .mini-box p {
-      color: #555;
+    .faixa-item p {
+      color: var(--cinza);
       font-size: 0.95rem;
     }
 
-    /* CARDS */
+    /* SERVIÇOS */
+    .bg-claro {
+      background: var(--roxo-claro-2);
+    }
+
     .grid-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -256,23 +318,22 @@
 
     .card {
       background: white;
-      border-radius: 16px;
-      padding: 25px;
+      border-radius: 18px;
+      padding: 26px;
       box-shadow: var(--sombra);
       transition: 0.3s;
       border-top: 5px solid var(--roxo);
-      border: 1px solid var(--borda);
+      border: 1px solid #f0ecf9;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
 
     .card h3 {
       color: var(--roxo);
       margin-bottom: 12px;
-      font-size: 1.18rem;
-      line-height: 1.3;
+      font-size: 1.2rem;
     }
 
     .card p {
@@ -292,22 +353,21 @@
     /* ESPECIALIZAÇÕES */
     .especializacoes-box {
       background: white;
-      padding: 35px;
-      border-radius: 16px;
+      padding: 34px;
+      border-radius: 18px;
       box-shadow: var(--sombra);
-      border: 1px solid var(--borda);
+      border: 1px solid #f0ecf9;
     }
 
     .especializacoes-box h3 {
       color: var(--roxo);
-      margin-bottom: 20px;
-      font-size: 1.3rem;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
     }
 
     .lista-especializacoes {
       columns: 2;
-      gap: 30px;
-      padding-left: 18px;
+      gap: 32px;
     }
 
     .lista-especializacoes li {
@@ -315,71 +375,69 @@
       color: #333;
     }
 
-    /* CURRÍCULO */
-    .curriculo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-
+    /* CURRÍCULO EM TELA */
     .curriculo-box {
       background: white;
-      border-radius: 16px;
-      padding: 30px;
+      border-radius: 18px;
       box-shadow: var(--sombra);
-      border: 1px solid var(--borda);
-      height: 100%;
+      border: 1px solid #f0ecf9;
+      padding: 34px;
     }
 
-    .curriculo-box h3 {
+    .curriculo-bloco + .curriculo-bloco {
+      margin-top: 34px;
+      padding-top: 26px;
+      border-top: 1px solid #ece7f7;
+    }
+
+    .curriculo-bloco h3 {
       color: var(--roxo);
-      margin-bottom: 18px;
-      font-size: 1.4rem;
-      border-bottom: 2px solid var(--roxo-claro);
-      padding-bottom: 10px;
+      font-size: 1.45rem;
+      margin-bottom: 22px;
     }
 
-    .item-cv {
-      padding: 16px 0;
-      border-bottom: 1px solid #eee;
+    .timeline {
+      display: grid;
+      gap: 16px;
     }
 
-    .item-cv:last-child {
-      border-bottom: none;
+    .timeline-item {
+      border: 1px solid #efe9fb;
+      border-left: 5px solid var(--roxo);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfbff;
     }
 
-    .item-cv h4 {
-      color: #2f2f2f;
+    .timeline-topo {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-topo h4 {
+      color: #2d2145;
       font-size: 1.05rem;
-      margin-bottom: 4px;
-      line-height: 1.35;
     }
 
-    .item-cv .cargo {
+    .timeline-cargo {
       color: var(--roxo);
       font-weight: bold;
-      margin-bottom: 4px;
-    }
-
-    .item-cv .periodo {
-      color: #777;
-      font-size: 0.95rem;
       margin-bottom: 6px;
-      display: inline-block;
-      background: var(--roxo-claro);
-      padding: 4px 10px;
-      border-radius: 999px;
     }
 
-    .item-cv ul {
-      padding-left: 18px;
+    .timeline-data {
+      color: var(--cinza);
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .timeline p {
       color: #444;
-      margin-top: 8px;
-    }
-
-    .item-cv li {
-      margin-bottom: 6px;
+      margin: 0;
     }
 
     /* CTA */
@@ -387,18 +445,18 @@
       background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
       color: white;
       text-align: center;
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 52px 30px;
       box-shadow: var(--sombra);
     }
 
     .cta h2 {
-      margin-bottom: 15px;
       font-size: 2rem;
+      margin-bottom: 14px;
     }
 
     .cta p {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 24px;
       font-size: 1.05rem;
     }
@@ -407,26 +465,32 @@
     .contato-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 28px;
     }
 
-    .contato-box, .form-box {
+    .contato-box,
+    .form-box {
       background: white;
-      padding: 28px;
-      border-radius: 16px;
+      border-radius: 18px;
       box-shadow: var(--sombra);
-      border: 1px solid var(--borda);
+      padding: 30px;
+      border: 1px solid #f0ecf9;
     }
 
     .contato-box h3,
     .form-box h3 {
       color: var(--roxo);
       margin-bottom: 16px;
+      font-size: 1.3rem;
     }
 
     .contato-item {
       margin-bottom: 14px;
       color: #333;
+    }
+
+    .contato-item strong {
+      color: #2d2145;
     }
 
     .form-group {
@@ -443,18 +507,19 @@
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 12px;
-      border: 1px solid #d8c9f7;
+      padding: 13px;
+      border: 1px solid #d9d0ea;
       border-radius: 10px;
       outline: none;
       font-size: 1rem;
       transition: 0.2s;
+      background: #fff;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--roxo);
-      box-shadow: 0 0 0 3px rgba(111,66,193,0.12);
+      box-shadow: 0 0 0 4px rgba(111,66,193,0.10);
     }
 
     .form-group textarea {
@@ -466,7 +531,7 @@
       background: var(--roxo);
       color: white;
       border: none;
-      padding: 13px 22px;
+      padding: 14px 24px;
       border-radius: 10px;
       cursor: pointer;
       font-size: 1rem;
@@ -478,11 +543,11 @@
       background: var(--roxo-escuro);
     }
 
-    /* RODAPÉ */
+    /* FOOTER */
     footer {
-      background: #2d1c4f;
-      color: #e9defd;
-      padding: 35px 0;
+      background: #24163f;
+      color: #e9e0ff;
+      padding: 36px 0;
       margin-top: 40px;
     }
 
@@ -491,8 +556,8 @@
     }
 
     .footer-content h3 {
-      margin-bottom: 10px;
       color: white;
+      margin-bottom: 10px;
     }
 
     .footer-content p {
@@ -500,69 +565,62 @@
     }
 
     /* RESPONSIVO */
-    @media (max-width: 1024px) {
-      .curriculo-grid,
+    @media (max-width: 980px) {
       .sobre-grid,
-      .contato-grid {
+      .contato-grid,
+      .faixa-grid {
         grid-template-columns: 1fr;
       }
 
-      .faixa-destaques {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .lista-especializacoes {
-        columns: 1;
-      }
-    }
-
-    @media (max-width: 768px) {
       .topo {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      nav ul {
-        gap: 8px;
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
-
       .hero h2 {
-        font-size: 2rem;
+        font-size: 2.15rem;
       }
 
-      .titulo-secao h2 {
-        font-size: 1.7rem;
+      .lista-especializacoes {
+        columns: 1;
+      }
+
+      .sobre-lista {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 560px) {
-      .faixa-destaques {
-        grid-template-columns: 1fr;
+    @media (max-width: 680px) {
+      section {
+        padding: 58px 0;
+      }
+
+      .hero {
+        padding: 72px 0;
       }
 
       .hero h2 {
-        font-size: 1.65rem;
+        font-size: 1.8rem;
+      }
+
+      .titulo-secao h2,
+      .cta h2 {
+        font-size: 1.6rem;
       }
 
       .logo h1 {
         font-size: 1.3rem;
       }
 
-      nav a {
-        font-size: 0.9rem;
-        padding: 6px 8px;
+      nav ul {
+        gap: 10px;
       }
 
       .curriculo-box,
       .especializacoes-box,
       .sobre-card,
       .contato-box,
-      .form-box,
-      .card {
+      .form-box {
         padding: 22px;
       }
     }
@@ -595,13 +653,18 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="container hero-content">
-      <h2>Cuidado especializado, humanizado e baseado em evidências</h2>
+      <span class="mini-tag">Atendimento humanizado, especializado e baseado em evidências</span>
+      <h2>Cuidado de enfermagem com acolhimento, experiência e atuação em múltiplas áreas da saúde</h2>
       <p>
         Atendimento de enfermagem com foco em promoção da saúde, prevenção, acompanhamento clínico,
-        tratamento de feridas, dor crônica, saúde da família, saúde do idoso, cuidados paliativos,
-        consultoria, terapias complementares, procedimentos e educação em saúde.
+        tratamento de feridas, dor crônica, cuidados paliativos, saúde do idoso, ambulância,
+        injetáveis, laudos, terapias complementares, saúde da família, consultoria e educação em saúde.
       </p>
-      <a href="#contato" class="btn">Agendar atendimento</a>
+
+      <div class="hero-botoes">
+        <a href="#contato" class="btn">Agendar atendimento</a>
+        <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+      </div>
     </div>
   </section>
 
@@ -611,63 +674,93 @@
       <div class="titulo-secao">
         <h2>Sobre Maria Cristina de Moraes</h2>
         <p>
-          Enfermeira especialista com ampla formação e atuação em assistência, gestão, educação em saúde,
-          supervisão, consultoria e acompanhamento integral de pacientes e famílias.
+          Enfermeira especialista com sólida trajetória em assistência, supervisão, gestão, educação em saúde,
+          urgência, feridas, atenção primária, saúde pública, cuidados paliativos e acompanhamento integral do paciente.
         </p>
       </div>
 
       <div class="sobre-grid">
         <div class="sobre-card">
           <h3>Atendimento com acolhimento, técnica e responsabilidade</h3>
+
           <p>
-            Maria Cristina de Moraes é Enfermeira Especialista, registrada no COREN-SP sob o número
-            <strong>321742</strong>, com trajetória profissional voltada à assistência integral,
-            coordenação de equipes, supervisão, prevenção de agravos, educação em saúde e consultoria.
+            Maria Cristina de Moraes é <strong>Enfermeira Especialista</strong>, registrada no
+            <strong>COREN-SP 321742</strong>, com ampla formação e experiência em diferentes cenários da assistência,
+            gestão e consultoria em saúde.
           </p>
+
           <p>
-            Sua atuação contempla o cuidado ao paciente e à família, acompanhamento clínico, promoção
-            da saúde, planejamento assistencial, tratamento de feridas, atenção ao idoso, dor crônica,
-            práticas complementares e suporte técnico em diferentes contextos da assistência.
+            Sua atuação contempla o cuidado ao paciente e à família, o planejamento assistencial,
+            o acompanhamento de condições agudas e crônicas, a educação em saúde, a orientação de cuidadores,
+            o apoio técnico a serviços e a construção de condutas voltadas à segurança e qualidade de vida.
           </p>
+
           <p>
-            Possui experiência em saúde pública, urgência e emergência, UPA, supervisão hospitalar,
-            ambulatório, UTI, atenção primária, atendimento domiciliar, curativos, capacitação de equipes,
-            gestão e assistência especializada.
+            Com experiência em setores como UTI adulto/pediátrica, pronto atendimento, ambulatório, endoscopia,
+            atendimento domiciliar, feridas/curativos e atenção primária, oferece um cuidado individualizado,
+            ético e centrado na pessoa.
           </p>
 
           <div class="destaque">
-            COREN-SP 321742 • Atendimento com ética, empatia, excelência técnica e compromisso com a qualidade de vida.
+            COREN-SP 321742 • Atendimento com ética, empatia, escuta qualificada e compromisso com o cuidado integral.
+          </div>
+
+          <div class="sobre-lista">
+            <div class="sobre-item">
+              <strong>Áreas assistenciais</strong>
+              Feridas, saúde do idoso, paliativos, atenção primária, dor crônica e teleconsulta.
+            </div>
+
+            <div class="sobre-item">
+              <strong>Consultoria e gestão</strong>
+              Processos assistenciais, segurança do paciente, orientação técnica e capacitação.
+            </div>
+
+            <div class="sobre-item">
+              <strong>Atendimento ao paciente</strong>
+              Avaliação, acompanhamento, planejamento de cuidados e orientação familiar.
+            </div>
+
+            <div class="sobre-item">
+              <strong>Abordagem ampliada</strong>
+              Integração entre assistência, educação em saúde, práticas complementares e bem-estar.
+            </div>
           </div>
         </div>
 
         <div class="foto-profissional">
-          <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a41?auto=format&fit=crop&w=900&q=80" alt="Profissional de enfermagem">
+          <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a41?auto=format&fit=crop&w=1000&q=80" alt="Profissional de enfermagem">
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="faixa-destaques">
-        <div class="mini-box">
-          <h3>20+</h3>
-          <p>Especializações e formações</p>
+  <!-- FAIXA DE DESTAQUES -->
+  <section class="faixa-destaques">
+    <div class="container">
+      <div class="faixa-grid">
+        <div class="faixa-item">
+          <h3>Teleconsulta</h3>
+          <p>Orientação e acompanhamento online para todo o Brasil.</p>
         </div>
-        <div class="mini-box">
-          <h3>10+</h3>
-          <p>Áreas de atuação profissional</p>
+        <div class="faixa-item">
+          <h3>Feridas e Curativos</h3>
+          <p>Avaliação, acompanhamento e cuidado especializado.</p>
         </div>
-        <div class="mini-box">
-          <h3>Assistência</h3>
-          <p>Clínica, domiciliar, consultiva e educativa</p>
+        <div class="faixa-item">
+          <h3>Cuidados Paliativos</h3>
+          <p>Conforto, qualidade de vida e apoio ao paciente e família.</p>
         </div>
-        <div class="mini-box">
-          <h3>Online</h3>
-          <p>Atendimento para todo o Brasil</p>
+        <div class="faixa-item">
+          <h3>Consultoria em Saúde</h3>
+          <p>Suporte técnico, assistencial e organizacional.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" style="background: var(--cinza-claro);">
+  <section id="servicos" class="bg-claro">
     <div class="container">
       <div class="titulo-secao">
         <h2>Serviços e Áreas de Atuação</h2>
@@ -678,7 +771,6 @@
       </div>
 
       <div class="grid-cards">
-
         <div class="card">
           <h3>Teleconsulta de Enfermagem</h3>
           <p>Atendimento remoto com orientação, avaliação inicial e acompanhamento em saúde.</p>
@@ -768,60 +860,92 @@
         </div>
 
         <div class="card">
-          <h3>Acompanhamento em Ambulância</h3>
-          <p>Suporte profissional de enfermagem em remoções, transferências e acompanhamentos assistidos.</p>
+          <h3>Serviço de Ambulância</h3>
+          <p>Atuação em remoção, suporte assistencial e atendimento em situações que demandem transporte com cuidado profissional.</p>
           <ul>
-            <li>Acompanhamento do paciente durante o transporte</li>
-            <li>Monitorização e observação clínica</li>
-            <li>Apoio à família e orientação durante o processo</li>
-            <li>Atuação com foco em segurança e continuidade do cuidado</li>
+            <li>Suporte em remoções programadas</li>
+            <li>Acompanhamento de pacientes</li>
+            <li>Organização assistencial no transporte</li>
+            <li>Apoio em demandas de urgência conforme escopo profissional</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Serviço de Injetáveis</h3>
-          <p>Administração de medicamentos injetáveis com técnica, segurança e orientação profissional.</p>
+          <p>Administração de medicamentos e terapias prescritas, com técnica, segurança e orientação ao paciente.</p>
           <ul>
-            <li>Aplicação conforme prescrição/orientação adequada</li>
-            <li>Cuidados de biossegurança</li>
-            <li>Orientações ao paciente</li>
-            <li>Acompanhamento de intercorrências imediatas</li>
+            <li>Aplicação de medicamentos injetáveis</li>
+            <li>Orientação pré e pós procedimento</li>
+            <li>Monitoramento e segurança do paciente</li>
+            <li>Assistência conforme avaliação de enfermagem</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Elaboração de Laudos e Pareceres</h3>
-          <p>Suporte técnico na elaboração de documentos e registros relacionados à assistência e ao cuidado.</p>
+          <h3>Elaboração de Laudos e Relatórios</h3>
+          <p>Produção de documentos técnicos de enfermagem, registros assistenciais e relatórios conforme necessidade do atendimento e da consultoria.</p>
           <ul>
-            <li>Laudos técnicos e pareceres de enfermagem</li>
             <li>Relatórios de acompanhamento</li>
+            <li>Pareceres e registros técnicos</li>
             <li>Documentação assistencial</li>
-            <li>Organização técnica de informações clínicas</li>
+            <li>Organização de informações clínicas e orientativas</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Terapias Complementares</h3>
-          <p>Abordagens integrativas voltadas ao bem-estar, conforto, equilíbrio e qualidade de vida.</p>
+          <p>Abordagens integrativas e complementares com foco em bem-estar, cuidado ampliado e qualidade de vida.</p>
           <ul>
-            <li>Práticas integrativas e complementares</li>
-            <li>Promoção de relaxamento e autocuidado</li>
-            <li>Apoio ao manejo do estresse e da dor</li>
-            <li>Cuidado complementar ao tratamento convencional</li>
+            <li>Promoção do autocuidado</li>
+            <li>Relaxamento e suporte ao bem-estar</li>
+            <li>Abordagem complementar ao cuidado</li>
+            <li>Atenção integral ao paciente</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Terapeuta Holística</h3>
-          <p>Cuidado centrado na pessoa, considerando aspectos físicos, emocionais, energéticos e de estilo de vida.</p>
+          <p>Atendimento com visão integral da pessoa, considerando aspectos físicos, emocionais e de bem-estar no processo de cuidado.</p>
           <ul>
-            <li>Escuta acolhedora e avaliação integral</li>
-            <li>Promoção de equilíbrio e bem-estar</li>
-            <li>Apoio complementar ao autocuidado</li>
-            <li>Abordagem humanizada e individualizada</li>
+            <li>Escuta acolhedora</li>
+            <li>Orientação para equilíbrio e qualidade de vida</li>
+            <li>Apoio complementar ao tratamento</li>
+            <li>Abordagem individualizada</li>
           </ul>
         </div>
 
+        <div class="card">
+          <h3>Urgência e Emergência</h3>
+          <p>Consultoria, capacitação, planejamento e apoio técnico em fluxos assistenciais.</p>
+          <ul>
+            <li>Organização de protocolos</li>
+            <li>Apoio técnico assistencial</li>
+            <li>Treinamento de equipes</li>
+            <li>Planejamento de fluxos de atendimento</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>UTI e Paciente Crítico</h3>
+          <p>Consultoria técnica, protocolos de segurança, educação continuada e gestão da assistência intensiva.</p>
+          <ul>
+            <li>Protocolos assistenciais</li>
+            <li>Educação continuada</li>
+            <li>Gestão do cuidado intensivo</li>
+            <li>Segurança do paciente crítico</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Infectologia e Vigilância em Saúde</h3>
+          <p>Orientação preventiva, controle de infecções e educação sobre doenças transmissíveis.</p>
+          <ul>
+            <li>Prevenção e controle de infecções</li>
+            <li>Orientações assistenciais</li>
+            <li>Educação em saúde</li>
+            <li>Apoio em boas práticas</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -832,178 +956,244 @@
       <div class="titulo-secao">
         <h2>Currículo Profissional</h2>
         <p>
-          Experiência profissional e formação acadêmica apresentadas em tela, destacando a trajetória de Maria Cristina de Moraes na enfermagem, gestão, docência e assistência especializada.
+          Experiência profissional e formação acadêmica apresentadas em tela para facilitar a visualização
+          da trajetória de Maria Cristina de Moraes.
         </p>
       </div>
 
-      <div class="curriculo-grid">
-
-        <!-- EXPERIÊNCIA -->
-        <div class="curriculo-box">
+      <div class="curriculo-box">
+        <div class="curriculo-bloco">
           <h3>Experiência Profissional</h3>
 
-          <div class="item-cv">
-            <h4>Prefeitura Municipal de Cotia</h4>
-            <div class="cargo">Enfermeira de Saúde Pública</div>
-            <div class="periodo">2023-09 – atual</div>
-          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Prefeitura Municipal de Cotia</h4>
+                  <div class="timeline-cargo">Enfermeira de Saúde Pública</div>
+                </div>
+                <div class="timeline-data">2023-09 – Atual</div>
+              </div>
+              <p>Atuação em saúde pública, acompanhamento assistencial, orientação em saúde, organização do cuidado e suporte às demandas da rede.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Hospital e Maternidade São Francisco – Cotia</h4>
-            <div class="cargo">Enfermeira Supervisora</div>
-            <div class="periodo">2022-01 – 2023-05</div>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Hospital e Maternidade São Francisco – Cotia</h4>
+                  <div class="timeline-cargo">Enfermeira Supervisora</div>
+                </div>
+                <div class="timeline-data">2022-01 – 2023-05</div>
+              </div>
+              <p>Supervisão de equipe, acompanhamento assistencial, organização de processos e apoio técnico ao cuidado hospitalar.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Prefeitura Municipal de Jandira</h4>
-            <div class="cargo">Enfermeira Emergencista</div>
-            <div class="periodo">2021-05 – 2022-02</div>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Prefeitura Municipal de Jandira</h4>
+                  <div class="timeline-cargo">Enfermeira Emergencista</div>
+                </div>
+                <div class="timeline-data">2021-05 – 2022-02</div>
+              </div>
+              <p>Atuação em atendimento de urgência e emergência, acolhimento, assistência e suporte em situações agudas.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Instituto Bom Jesus – UPA Cotia</h4>
-            <div class="cargo">Enfermeira Supervisora</div>
-            <div class="periodo">2018-03 – 2020-07</div>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Instituto Bom Jesus – UPA Cotia</h4>
+                  <div class="timeline-cargo">Enfermeira Supervisora</div>
+                </div>
+                <div class="timeline-data">2018-03 – 2020-07</div>
+              </div>
+              <p>Supervisão de equipe, gestão do cuidado, organização do atendimento e suporte à assistência em unidade de pronto atendimento.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Centro Médico – Cotia</h4>
-            <div class="cargo">Enfermeira RT</div>
-            <div class="periodo">2019-05 – 2020-06</div>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Centro Médico – Cotia</h4>
+                  <div class="timeline-cargo">Enfermeira RT</div>
+                </div>
+                <div class="timeline-data">2019-05 – 2020-06</div>
+              </div>
+              <p>Responsabilidade técnica, organização assistencial, acompanhamento de rotinas e suporte à qualidade do serviço.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Instituto Acqua – UPA Cotia</h4>
-            <div class="cargo">Enfermeira Assistencial</div>
-            <div class="periodo">2015-07 – 2018-02</div>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Instituto Acqua – UPA Cotia</h4>
+                  <div class="timeline-cargo">Enfermeira Assistencial</div>
+                </div>
+                <div class="timeline-data">2015-07 – 2018-02</div>
+              </div>
+              <p>Assistência direta ao paciente, acompanhamento clínico, procedimentos e suporte em demandas de urgência.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Faculdade Mario Schenberg – Cotia</h4>
-            <div class="cargo">Professora Nível Superior na Saúde</div>
-            <div class="periodo">2014-08 – 2017-10</div>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Faculdade Mario Schenberg – Cotia</h4>
+                  <div class="timeline-cargo">Professora Nível Superior na Saúde</div>
+                </div>
+                <div class="timeline-data">2014-08 – 2017-10</div>
+              </div>
+              <p>Atuação na docência, apoio à formação de profissionais, orientação de conteúdos e educação em saúde.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Hospital e Maternidade São Francisco – Cotia</h4>
-            <div class="cargo">Enfermeira Intensivista</div>
-            <div class="periodo">2012-02 – 2013-01</div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Hospital e Maternidade São Francisco – Cotia</h4>
+                  <div class="timeline-cargo">Enfermeira Intensivista</div>
+                </div>
+                <div class="timeline-data">2012-02 – 2013-01</div>
+              </div>
+              <p>Atuação em cuidado intensivo, monitoramento, planejamento assistencial e suporte ao paciente crítico.</p>
+            </div>
           </div>
         </div>
 
-        <!-- FORMAÇÃO -->
-        <div class="curriculo-box">
+        <div class="curriculo-bloco">
           <h3>Formação Acadêmica</h3>
 
-          <div class="item-cv">
-            <h4>FAMEESP, São Paulo</h4>
-            <div class="periodo">2022 – 2024</div>
-            <ul>
-              <li>Vigilância Sanitária</li>
-              <li>Psicologia em Cuidados Paliativos</li>
-            </ul>
-          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>FAMEESP – São Paulo</h4>
+                  <div class="timeline-cargo">Vigilância Sanitária • Psicologia em Cuidados Paliativos</div>
+                </div>
+                <div class="timeline-data">2022 – 2024</div>
+              </div>
+              <p>Formação voltada ao cuidado paliativo, vigilância em saúde e qualificação técnica para atuação ampliada na assistência e na gestão.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Faculdade Iguaçu, Paraná</h4>
-            <div class="periodo">2023 – 2024</div>
-            <ul>
-              <li>Saúde Materno Infantil</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Faculdade Iguaçu – Paraná</h4>
+                  <div class="timeline-cargo">Saúde Materno Infantil</div>
+                </div>
+                <div class="timeline-data">2023 – 2024</div>
+              </div>
+              <p>Formação voltada ao cuidado da gestante, puérpera, recém-nascido e acompanhamento familiar.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>FAMEESP, São Paulo</h4>
-            <div class="periodo">2022 – 2023</div>
-            <ul>
-              <li>Infectologia</li>
-              <li>Práticas Integrativas e Complementares em Saúde</li>
-              <li>Saúde e Segurança do Trabalho</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>FAMEESP – São Paulo</h4>
+                  <div class="timeline-cargo">Infectologia • Práticas Integrativas e Complementares em Saúde • Saúde e Segurança do Trabalho</div>
+                </div>
+                <div class="timeline-data">2022 – 2023</div>
+              </div>
+              <p>Qualificação voltada à infectologia, práticas complementares e promoção da saúde no contexto ocupacional e assistencial.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>FAVENI, Espírito Santo</h4>
-            <div class="periodo">2021 – 2023</div>
-            <ul>
-              <li>Investigação Forense e Perícia Criminal</li>
-              <li>Direito Aplicado aos Serviços de Saúde</li>
-              <li>UTI Geral e Gestão da Assistência Intensiva ao Paciente Crítico</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>FAVENI – Espírito Santo</h4>
+                  <div class="timeline-cargo">Investigação Forense e Perícia Criminal • Direito Aplicado aos Serviços de Saúde • UTI Geral e Gestão da Assistência Intensiva ao Paciente Crítico</div>
+                </div>
+                <div class="timeline-data">2021 – 2023</div>
+              </div>
+              <p>Formação em áreas periciais, gestão intensiva, fundamentos legais aplicados à saúde e assistência ao paciente crítico.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Faculdade Iguaçu, Paraná</h4>
-            <div class="periodo">2022 – 2023</div>
-            <ul>
-              <li>Dermatologia e Tratamento de Feridas</li>
-              <li>Enfermagem Forense</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Faculdade Iguaçu – Paraná</h4>
+                  <div class="timeline-cargo">Dermatologia e Tratamento de Feridas • Enfermagem Forense</div>
+                </div>
+                <div class="timeline-data">2022 – 2023</div>
+              </div>
+              <p>Qualificação específica em feridas, cicatrização, cuidado dermatológico e fundamentos de enfermagem forense.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>FAMEESP, São Paulo</h4>
-            <div class="periodo">2021 – 2022</div>
-            <ul>
-              <li>Patologia</li>
-              <li>Urgência e Emergência</li>
-              <li>Centro Cirúrgico</li>
-              <li>Gerontologia</li>
-              <li>Saúde Pública</li>
-              <li>Coaching Pessoal e de Equipe</li>
-              <li>Gestão de Pessoas</li>
-              <li>MBA em Gestão Hospitalar</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>FAMEESP – São Paulo</h4>
+                  <div class="timeline-cargo">Patologia • Urgência e Emergência • Centro Cirúrgico • Gerontologia • Saúde Pública • Coaching Pessoal e de Equipe • Gestão de Pessoas • MBA em Gestão Hospitalar</div>
+                </div>
+                <div class="timeline-data">2021 – 2022</div>
+              </div>
+              <p>Formação multidisciplinar em assistência, urgência, envelhecimento, gestão hospitalar, saúde pública e desenvolvimento de equipes.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Faculdade Associada Brasil, São Paulo</h4>
-            <div class="periodo">2013 – 2014</div>
-            <ul>
-              <li>Docência do Ensino Médio, Técnico e Superior na Área da Saúde</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Faculdade Associada Brasil – São Paulo</h4>
+                  <div class="timeline-cargo">Docência do Ensino Médio, Técnico e Superior na Área da Saúde</div>
+                </div>
+                <div class="timeline-data">2013 – 2014</div>
+              </div>
+              <p>Formação direcionada à docência, educação profissional e ensino em saúde.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Estácio – Cotia</h4>
-            <div class="periodo">2009 – 2012</div>
-            <ul>
-              <li>Enfermagem</li>
-            </ul>
-          </div>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Estácio – Cotia</h4>
+                  <div class="timeline-cargo">Enfermagem</div>
+                </div>
+                <div class="timeline-data">2009 – 2012</div>
+              </div>
+              <p>Graduação em Enfermagem, base da atuação assistencial, educativa, gerencial e consultiva na área da saúde.</p>
+            </div>
 
-          <div class="item-cv">
-            <h4>Dra. Lourdes de Freitas Carvalho – HRC, Cotia</h4>
-            <div class="periodo">1999 – 2001</div>
-            <ul>
-              <li>Auxiliar de Enfermagem</li>
-            </ul>
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Dra. Lourdes de Freitas Carvalho – HRC, Cotia</h4>
+                  <div class="timeline-cargo">Auxiliar de Enfermagem</div>
+                </div>
+                <div class="timeline-data">1999 – 2001</div>
+              </div>
+              <p>Formação técnica voltada ao cuidado e assistência de enfermagem.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-topo">
+                <div>
+                  <h4>Kenkiti Simomoto – Cotia</h4>
+                  <div class="timeline-cargo">Formação complementar</div>
+                </div>
+                <div class="timeline-data">1998 – 2000</div>
+              </div>
+              <p>Registro acadêmico conforme currículo apresentado.</p>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ESPECIALIZAÇÕES -->
-  <section id="especializacoes" style="background: var(--cinza-claro);">
+  <section id="especializacoes" class="bg-claro">
     <div class="container">
       <div class="titulo-secao">
         <h2>Especializações</h2>
         <p>
           Formação ampla e multidisciplinar, com foco em assistência, gestão, urgência, saúde pública,
-          cuidados paliativos, dermatologia, infectologia, saúde da família, práticas integrativas e muito mais.
+          cuidados paliativos, dermatologia, infectologia, saúde da família e muito mais.
         </p>
       </div>
 
       <div class="especializacoes-box">
-        <h3>Especializações e áreas de formação</h3>
+        <h3>Especializações registradas</h3>
         <ul class="lista-especializacoes">
           <li>Prática da Enfermagem Cirúrgica</li>
           <li>Coaching Pessoal e de Equipe</li>
           <li>Cuidados Paliativos</li>
           <li>Direito Aplicado aos Serviços de Saúde</li>
-          <li>Enfermagem e Patologias</li>
+          <li>Enfermagem e as Patologias</li>
           <li>Enfermagem e Doenças Transmissíveis</li>
           <li>Enfermagem em Dermatologia e Tratamento de Feridas</li>
           <li>Enfermagem em Urgência e Emergência</li>
@@ -1021,9 +1211,15 @@
           <li>Saúde Pública</li>
           <li>UTI Geral e Gestão da Assistência Intensiva ao Paciente Crítico</li>
           <li>Vigilância Sanitária</li>
-          <li>Docência do Ensino Médio, Técnico e Superior na Área da Saúde</li>
-          <li>Centro Cirúrgico</li>
-          <li>Patologia</li>
+        </ul>
+
+        <br><br>
+
+        <h3>Especializações em andamento</h3>
+        <ul>
+          <li>Gerenciamento em Enfermagem</li>
+          <li>Gestão em Saúde Hospitalar, Clínica e Postos de Saúde</li>
+          <li>Gestão em Saúde Pública</li>
         </ul>
       </div>
     </div>
@@ -1064,58 +1260,15 @@
     </div>
   </section>
 
-  <!-- ÁREAS ESPECIAIS -->
-  <section style="background: var(--cinza-claro);">
-    <div class="container">
-      <div class="titulo-secao">
-        <h2>Atuação em Áreas Especiais</h2>
-        <p>
-          Cuidado especializado para diferentes perfis de pacientes e necessidades clínicas, assistenciais e institucionais.
-        </p>
-      </div>
-
-      <div class="grid-cards">
-        <div class="card">
-          <h3>Urgência e Emergência</h3>
-          <p>Consultoria, capacitação, planejamento e apoio técnico em fluxos assistenciais.</p>
-        </div>
-
-        <div class="card">
-          <h3>UTI e Paciente Crítico</h3>
-          <p>Consultoria técnica, protocolos de segurança, educação continuada e gestão da assistência intensiva.</p>
-        </div>
-
-        <div class="card">
-          <h3>Infectologia</h3>
-          <p>Orientação preventiva, controle de infecções e educação sobre doenças transmissíveis.</p>
-        </div>
-
-        <div class="card">
-          <h3>Vigilância Sanitária</h3>
-          <p>Consultoria, adequação sanitária, auditorias internas e capacitação de equipes.</p>
-        </div>
-
-        <div class="card">
-          <h3>Saúde e Segurança do Trabalho</h3>
-          <p>Promoção da saúde ocupacional, prevenção de agravos e ações educativas em saúde.</p>
-        </div>
-
-        <div class="card">
-          <h3>Consultoria Pericial e Técnica</h3>
-          <p>Pareceres técnicos, enfermagem forense e apoio especializado em saúde e serviços.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section>
     <div class="container">
       <div class="cta">
-        <h2>Cuidado profissional com acolhimento e excelência</h2>
+        <h2>Cuidado profissional com acolhimento, experiência e excelência</h2>
         <p>
           Atendimento individualizado para pacientes, familiares, cuidadores e instituições,
-          com foco em qualidade de vida, segurança, educação em saúde e cuidado integral.
+          com foco em qualidade de vida, segurança, educação em saúde, assistência especializada
+          e cuidado integral.
         </p>
         <a href="#contato" class="btn">Entrar em contato</a>
       </div>
@@ -1154,13 +1307,14 @@
           </div>
 
           <div class="contato-item">
-            <strong>Atendimento:</strong> Online e suporte em diferentes modalidades de cuidado
+            <strong>Atendimento:</strong> Online e consultivo
           </div>
 
           <div class="contato-item">
             <strong>Áreas de atuação:</strong>
-            Teleconsulta, feridas, fibromialgia, cuidados paliativos, saúde do idoso, saúde da família,
-            injetáveis, laudos, terapias complementares, terapeuta holística e acompanhamento em ambulância.
+            Teleconsulta, feridas, fibromialgia, dor crônica, cuidados paliativos, saúde do idoso,
+            saúde da família, ambulância, injetáveis, laudos, terapias complementares, terapeuta holística,
+            consultoria e educação em saúde.
           </div>
         </div>
 
@@ -1194,7 +1348,7 @@
     </div>
   </section>
 
-  <!-- RODAPÉ -->
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-content">
       <h3>Maria Cristina de Moraes</h3>
