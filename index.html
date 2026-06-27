@@ -178,6 +178,32 @@
       color: white;
     }
 
+ /* tabela serviços */
+    .tabela-precos{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+.tabela-precos th{
+    background:#6f42c1;
+    color:#fff;
+    padding:12px;
+    text-align:left;
+}
+
+.tabela-precos td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+.tabela-precos tr:nth-child(even){
+    background:#f8f5ff;
+}
+
+.tabela-precos tr:hover{
+    background:#efe7ff;
+}   
     /* SEÇÕES */
     section {
       padding: 75px 0;
@@ -1275,6 +1301,125 @@
     </div>
   </section>
 
+  <!-- CATÁLOGO DE SERVIÇOS -->
+<section id="precos" style="background:#f5f0ff;">
+    <div class="container">
+
+        <div class="titulo-secao">
+            <h2>Catálogo de Especialidades e Valores</h2>
+            <p>
+                Valores de referência para atendimentos de enfermagem. Os preços poderão variar conforme
+                a complexidade do caso, materiais utilizados e local do atendimento.
+            </p>
+        </div>
+
+        <div class="grid-cards">
+
+            <div class="card">
+                <h3>🩺 Consultas</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Consulta de Enfermagem</td><td>R$ 180–300</td></tr>
+                    <tr><td>Consulta Domiciliar</td><td>R$ 250–450</td></tr>
+                    <tr><td>Avaliação Clínica</td><td>R$ 250–400</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>💉 Aplicações e Medicações</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Aplicação IM</td><td>R$ 60–90</td></tr>
+                    <tr><td>Aplicação SC</td><td>R$ 50–80</td></tr>
+                    <tr><td>Aplicação EV</td><td>R$ 120–200</td></tr>
+                    <tr><td>Soroterapia</td><td>R$ 250–600</td></tr>
+                    <tr><td>Antibioticoterapia EV</td><td>R$ 180–350</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🩹 Curativos e Feridas</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Curativo Simples</td><td>R$ 120–180</td></tr>
+                    <tr><td>Curativo Médio</td><td>R$ 180–300</td></tr>
+                    <tr><td>Curativo Complexo</td><td>R$ 350–800</td></tr>
+                    <tr><td>Bota de Unna</td><td>R$ 280–450</td></tr>
+                    <tr><td>Laserterapia</td><td>R$ 150–350</td></tr>
+                    <tr><td>Desbridamento Conservador</td><td>R$ 350–800</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🌿 Terapias Complementares</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Ozonioterapia*</td><td>R$ 180–450</td></tr>
+                    <tr><td>Auriculoterapia</td><td>R$ 120–180</td></tr>
+                    <tr><td>Terapia Holística</td><td>R$ 180–350</td></tr>
+                </table>
+                <small>*Conforme regulamentação profissional vigente.</small>
+            </div>
+
+            <div class="card">
+                <h3>👶 Saúde Materno-Infantil</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Consulta em Amamentação</td><td>R$ 250–450</td></tr>
+                    <tr><td>Consulta Neonatal</td><td>R$ 250–450</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>❤️ Cuidados Especiais</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Cuidados Paliativos</td><td>R$ 300–600</td></tr>
+                    <tr><td>Atendimento Oncológico</td><td>R$ 300–600</td></tr>
+                    <tr><td>Gerenciamento de Casos</td><td>R$ 500–1.500/mês</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🚑 Atendimento Particular</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Plantão 6 horas</td><td>R$ 500–800</td></tr>
+                    <tr><td>Plantão 12 horas</td><td>R$ 900–1.500</td></tr>
+                    <tr><td>Plantão 24 horas</td><td>R$ 1.800–3.500</td></tr>
+                    <tr><td>Serviço de Ambulância</td><td>Sob orçamento</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>⚖️ Perícia de Enfermagem</h3>
+                <table class="tabela-precos">
+                    <tr><th>Serviço</th><th>Valor</th></tr>
+                    <tr><td>Parecer Técnico</td><td>R$ 1.000–2.500</td></tr>
+                    <tr><td>Laudo Técnico</td><td>R$ 1.500–4.000</td></tr>
+                    <tr><td>Assistência Técnica</td><td>R$ 2.500–8.000</td></tr>
+                    <tr><td>Perícia Judicial</td><td>R$ 4.000–15.000</td></tr>
+                    <tr><td>Perícia Extrajudicial</td><td>R$ 3.000–10.000</td></tr>
+                    <tr><td>Análise de Prontuário</td><td>R$ 800–2.000</td></tr>
+                    <tr><td>Hora Técnica</td><td>R$ 350–700/hora</td></tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="destaque" style="margin-top:40px;">
+            <strong>Observações:</strong><br><br>
+
+            • Valores sujeitos à avaliação da complexidade do caso.<br>
+            • Materiais, medicamentos e taxas de deslocamento poderão ser cobrados separadamente.<br>
+            • Atendimentos domiciliares, empresariais e institucionais mediante agendamento.<br>
+            • Procedimentos sujeitos à avaliação clínica e às normas dos Conselhos Profissionais.<br>
+            • Condições especiais para pacotes, tratamentos contínuos e contratos empresariais.
+        </div>
+
+    </div>
+</section>
+  
   <!-- CONTATO -->
   <section id="contato">
     <div class="container">
